@@ -256,9 +256,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             Node<T> node = head;
             @Override
             public boolean hasNext() {
-                if (node == null)
-                    return false;
-                return node.next != null;
+                return node != null;
             }
 
             @Override
