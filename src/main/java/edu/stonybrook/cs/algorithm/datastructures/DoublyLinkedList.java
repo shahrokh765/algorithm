@@ -227,7 +227,6 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         if (obj == null){
             for (; node != null; node = node.next, index++){
                 if (node.data == null){
-                    remove(node);
                     return index;
                 }
             }
@@ -235,7 +234,6 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         }else{
             for (; node != null; node = node.next, index++) {
                 if (obj.equals(node.data)) {
-                    remove(node);
                     return index;
                 }
             }
@@ -258,6 +256,8 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             Node<T> node = head;
             @Override
             public boolean hasNext() {
+                if (node == null)
+                    return false;
                 return node.next != null;
             }
 
