@@ -106,6 +106,14 @@ public class DynamicArray<T> implements Iterable<T>{
         return indexOf(obj) != -1;
     }
 
+    /**Return new DynamicArray in reversed order*/
+    public DynamicArray<T> reversed(){
+        DynamicArray<T> reversed = new DynamicArray<>(size());
+        for (int i = size() - 1; i >= 0; i--)
+            reversed.add(arr[i]);
+        return reversed;
+    }
+
     /**
      * Returns an iterator over elements of type {@code T}.
      *

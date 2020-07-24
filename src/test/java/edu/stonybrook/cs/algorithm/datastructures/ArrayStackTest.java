@@ -5,7 +5,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ListStackTest {
+public class ArrayStackTest {
+
     private class Student {
         String name;
         int id;
@@ -22,7 +23,7 @@ public class ListStackTest {
 
     @Test
     public void size() {
-        ListStack<Student> students = new ListStack<>();
+        ArrayStack<Student> students = new ArrayStack<>();
         for (int i = 0; i < 10; i++) {
             students.push(new Student(i, "student " + i));
             assertEquals(students.size(), i+1);
@@ -35,7 +36,7 @@ public class ListStackTest {
 
     @Test
     public void isEmpty() {
-        ListStack<Student> students = new ListStack<>();
+        ArrayStack<Student> students = new ArrayStack<>();
         assertTrue(students.isEmpty());
         for (int i = 0; i < 10; i++) {
             students.push(new Student(i, "student " + i));
@@ -56,13 +57,13 @@ public class ListStackTest {
 
     @Test
     public void pop() {
-        ListStack<Student> students = new ListStack<>();
-        students.pop();
+        ArrayStack<Student> students = new ArrayStack<>();
+//        students.pop();
     }
 
     @Test
     public void peek() {
-        ListStack<Student> students = new ListStack<>();
+        ArrayStack<Student> students = new ArrayStack<>();
         for (int i = 0; i < 10; i++) {
             students.push(new Student(i, "student " + i));
         }
@@ -74,7 +75,7 @@ public class ListStackTest {
 
     @Test
     public void peekFirst() {
-        ListStack<Student> students = new ListStack<>();
+        ArrayStack<Student> students = new ArrayStack<>();
         Student first = new Student(1111, "test");
         students.push(first);
         for (int i = 0; i < 10; i++) {
@@ -86,7 +87,7 @@ public class ListStackTest {
 
     @Test
     public void iterator() {
-        ListStack<Student> students = new ListStack<>();
+        ArrayStack<Student> students = new ArrayStack<>();
         Student first = new Student(1111, "test");
         students.push(first);
         for (int i = 0; i < 10; i++) {
